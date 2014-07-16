@@ -63,6 +63,7 @@ module Sneakers
           res = :error
           error = ex
           logger.error(ex)
+          ex.backtrace.each {|line| logger.error(line)}
         end
 
         if @should_ack
